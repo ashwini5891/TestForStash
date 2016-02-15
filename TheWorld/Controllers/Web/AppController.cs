@@ -3,20 +3,23 @@ using Microsoft.AspNet.Mvc;
 using TheWorld.Services;
 using TheWorld.ViewModels;
 using TheWorld.Models;
+using System.Linq;
 
 namespace TheWorld.Controllers.Web
 {
   public class AppController : Controller
   {
+        private QuoteContext _context;
 
-    public AppController(QuoteContext context)
+        public AppController(QuoteContext context)
     {
-      
+            _context = context;
     }
 
     public IActionResult Index()
     {
-      return View();
+            var quotes = _context.Quotes.OrderBy(t => t.Created).ToList();
+      return View(quotes);
     }
 
     public IActionResult About()

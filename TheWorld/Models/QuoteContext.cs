@@ -9,5 +9,12 @@ namespace TheWorld.Models
     public class QuoteContext : DbContext
     {
         public DbSet<Quote> Quotes { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            var connString = Startup.Configuration["Data:QuotesContextConnection"];
+            optionsBuilder.UseSqlServer(connString);
+            base.OnConfiguring(optionsBuilder);
+        }
     }
 }
