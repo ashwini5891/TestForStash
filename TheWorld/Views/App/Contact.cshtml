@@ -1,6 +1,6 @@
-﻿@model TheWorld.ViewModels.ContactViewModel
+﻿@model TheWorld.ViewModels.QuoteViewModel
 @{
-  ViewBag.Title = "Contact Us";
+  ViewBag.Title = "Get a Quote";
 }
 @section Scripts {
   <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
@@ -35,14 +35,10 @@
             <input asp-for="PostCode" class="form-control" />
             <span asp-validation-for="PostCode" class="text-muted"></span>
         </div>
-      <div class="form-group">
-        <label asp-for="Message">Message</label>
-        <textarea cols="40" rows="4" asp-for="Message" class="form-control"></textarea>
-        <span asp-validation-for="Message" class="text-muted"></span>
-      </div>
+      
       <div class="form-group">
         <a asp-controller="App" asp-action="Index" class="btn btn-default">Cancel</a>
-        <input type="submit" value="Send Message" class="btn btn-success" />
+        <input type="submit" value="Get a Quote" class="btn btn-success" />
       </div>
     </form>
   </div></div>

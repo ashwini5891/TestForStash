@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TheWorld.ViewModels
 {
-  public class ContactViewModel
+  public class QuoteViewModel
   {
     [Required]
     [StringLength(255, MinimumLength = 5)]
@@ -21,8 +21,5 @@ namespace TheWorld.ViewModels
         [StringLength(255, MinimumLength = 5)]
         public string PostCode { get; set; }
 
-        [Required]
-    [StringLength(1024, MinimumLength = 5)]
-    public string Message { get; set; }
   }
 }

@@ -30,7 +30,7 @@ namespace TheWorld.Controllers.Web
     }
 
     [HttpPost]
-    public IActionResult Contact(ContactViewModel model)
+    public IActionResult Contact(QuoteViewModel model)
     {
             if (ModelState.IsValid)
             {
