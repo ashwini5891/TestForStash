@@ -1,5 +1,5 @@
 // site.js
-(function () {
+///(function () {
 
   //var ele = $("#username");
   //ele.text("Shawn Wildermuth");
@@ -18,14 +18,14 @@
   //  alert(me.text());
   //});
 
-  var $sidebarAndWrapper = $("#sidebar,#wrapper");
+  ////var $sidebarAndWrapper = $("#sidebar,#wrapper");
 
-  $("#sidebarToggle").on("click", function () {
-    $sidebarAndWrapper.toggleClass("hide-sidebar");
-    if ($sidebarAndWrapper.hasClass("hide-sidebar")) {
-      $(this).text("Show Sidebar");
-    } else {
-      $(this).text("Hide Sidebar");
-    }
-  });
-})();
+  //$("#sidebarToggle").on("click", function () {
+  //  $sidebarAndWrapper.toggleClass("hide-sidebar");
+  //  if ($sidebarAndWrapper.hasClass("hide-sidebar")) {
+  //    $(this).text("Show Sidebar");
+  //  } else {
+  //    $(this).text("Hide Sidebar");
+  //  }
+  //});
+////})();s
