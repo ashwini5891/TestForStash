@@ -16,15 +16,25 @@
       }
       <div asp-validation-summary="ValidationSummary.ModelOnly"></div>
       <div class="form-group">
-        <label asp-for="Name">Name</label>
-        <input asp-for="Name" class="form-control" />
-        <span asp-validation-for="Name" class="text-muted"></span>
+        <label asp-for="FirstName">First Name</label>
+        <input asp-for="FirstName" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-muted"></span>
       </div>
+        <div class="form-group">
+            <label asp-for="LastName">Last Name</label>
+            <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-muted"></span>
+        </div>
       <div class="form-group">
         <label asp-for="Email">Email</label>
         <input type="email" asp-for="Email" class="form-control" />
         <span asp-validation-for="Email" class="text-muted"></span>
       </div>
+        <div class="form-group">
+            <label asp-for="PostCode">Post code</label>
+            <input asp-for="PostCode" class="form-control" />
+            <span asp-validation-for="PostCode" class="text-muted"></span>
+        </div>
       <div class="form-group">
         <label asp-for="Message">Message</label>
         <textarea cols="40" rows="4" asp-for="Message" class="form-control"></textarea>
