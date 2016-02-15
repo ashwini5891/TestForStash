@@ -24,23 +24,6 @@ namespace TheWorld.Controllers.Web
       return View();
     }
 
-    //public IActionResult Contact()
-    //{
-    //  return View();
-    //}
-
-    //[HttpPost]
-    //public IActionResult Contact(QuoteViewModel model)
-    //{
-    //        if (ModelState.IsValid)
-    //        {
-
-    //            ViewBag.Message = "Mail Sent. Thanks!";
-
-    //        }
-    //  return View();
-    //}
-
     public IActionResult GetAQuoteInSQL()
         {
             return View();
@@ -58,5 +41,23 @@ namespace TheWorld.Controllers.Web
             }
             return View();
         }
-  }
+
+        public IActionResult GetAQuoteViaGit()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public IActionResult GetAQuoteViaGit(QuoteViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+
+                ViewBag.Message = "Mail Sent. Thanks!";
+
+            }
+            return View();
+        }
+    }
 }
