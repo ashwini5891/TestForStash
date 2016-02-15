@@ -2,16 +2,16 @@ using System;
 using Microsoft.AspNet.Mvc;
 using TheWorld.Services;
 using TheWorld.ViewModels;
+using TheWorld.Models;
 
 namespace TheWorld.Controllers.Web
 {
   public class AppController : Controller
   {
-    private IMailService _mailService;
 
-    public AppController(IMailService service)
+    public AppController(QuoteContext context)
     {
-      _mailService = service;
+      
     }
 
     public IActionResult Index()
