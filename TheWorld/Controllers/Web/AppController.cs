@@ -24,21 +24,39 @@ namespace TheWorld.Controllers.Web
       return View();
     }
 
-    public IActionResult Contact()
-    {
-      return View();
-    }
+    //public IActionResult Contact()
+    //{
+    //  return View();
+    //}
+
+    //[HttpPost]
+    //public IActionResult Contact(QuoteViewModel model)
+    //{
+    //        if (ModelState.IsValid)
+    //        {
+
+    //            ViewBag.Message = "Mail Sent. Thanks!";
+
+    //        }
+    //  return View();
+    //}
+
+    public IActionResult GetAQuoteInSQL()
+        {
+            return View();
+        }
+
 
     [HttpPost]
-    public IActionResult Contact(QuoteViewModel model)
-    {
+    public IActionResult GetAQuoteInSQL(QuoteViewModel model)
+        {
             if (ModelState.IsValid)
             {
 
                 ViewBag.Message = "Mail Sent. Thanks!";
 
             }
-      return View();
-    }
+            return View();
+        }
   }
 }
