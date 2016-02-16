@@ -4,6 +4,7 @@ using TheWorld.Models;
 using System.Linq;
 using LibGit2Sharp;
 using System.Web.Script.Serialization;
+using System;
 
 namespace TheWorld.Controllers.Web
 {
@@ -71,17 +72,27 @@ namespace TheWorld.Controllers.Web
                 ViewBag.Message = "Mail Sent. Thanks!";
 
             }
-
-            //string jsonObject = Newtonsoft.Json.JsonConvert.SerializeObject(model);
-
+            string rootedPath = Repository.Init("C:\\temp\\rooted\\path");
             string jsondata = new JavaScriptSerializer().Serialize(model);
               
-            System.IO.File.WriteAllText(@"c:\\temp\\rooted\\" + "output.json", jsondata);
-            //string rootedPath = Repository.Init("C:\\temp\\rooted");
-            //File.WriteAllText(@"c:\user.json", json);
-            //System.IO.StreamWriter file = new System.IO.StreamWriter("c:\\temp\\rooted\\test.txt");
-            //file.WriteLine(@"c:\\temp\\rooted\\test.txt", "sgsfgs");
-            //file.WriteAllText(@"c:\\temp\\rooted\\user.json", jsonObject);
+            //System.IO.File.WriteAllText(@"c:\\temp\\rooted\\" + "output.json", jsondata);
+
+            using (var repo = new Repository("C:\\temp\\rooted\\path"))
+            {
+                // Write content to file system
+                System.IO.File.WriteAllText(System.IO.Path.Combine(repo.Info.WorkingDirectory, "output.json"), jsondata);
+
+                // Stage the file
+                repo.Stage("output.json");
+
+                // Create the committer's signature and commit
+                Signature author = new Signature("James", "@jugglingnutcase", DateTime.Now);
+                Signature committer = author;
+
+                // Commit to the repository
+                Commit commit = repo.Commit("Here's a commit i made!", author, committer);
+            }
+
             return View();
         }
     }
