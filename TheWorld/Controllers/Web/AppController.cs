@@ -20,6 +20,7 @@ namespace TheWorld.Controllers.Web
     {
             var quotes = _context.Quotes.OrderBy(t => t.Created).ToList();
       return View(quotes);
+            //return View();
     }
 
     public IActionResult About()

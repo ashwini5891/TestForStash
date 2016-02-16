@@ -8,6 +8,10 @@ namespace TheWorld.Models
 {
     public class QuoteContext : DbContext
     {
+        public QuoteContext()
+        {
+            Database.EnsureCreated();
+        }
         public DbSet<Quote> Quotes { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
