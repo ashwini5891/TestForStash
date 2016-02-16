@@ -11,7 +11,9 @@
     "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-rc1-final",
     "EntityFramework.Core": "7.0.0-rc1-final",
     "EntityFramework.MicrosoftSqlServer": "7.0.0-rc1-final",
-    "EntityFramework.Commands": "7.0.0-rc1-final"
+    "EntityFramework.Commands": "7.0.0-rc1-final",
+    "Newtonsoft.Json": "8.0.2",
+    "LibGit2Sharp": "0.21.0.176"
   },
 
   "commands": {
@@ -20,7 +22,11 @@
   },
 
   "frameworks": {
-    "dnx451": { }
+    "dnx451": {
+      "frameworkAssemblies": {
+        "System.Web.Extensions": "4.0.0.0"
+      }
+    }
   },
 
   "exclude": [

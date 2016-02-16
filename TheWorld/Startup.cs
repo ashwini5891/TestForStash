@@ -55,7 +55,7 @@ namespace TheWorld
           defaults: new { controller = "App", action = "Index" }
           );
       });
-      seedData.EnsureSeedData();
+      //seedData.EnsureSeedData();
     }
 
     // Entry point for the application.

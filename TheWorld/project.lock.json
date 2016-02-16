@@ -139,6 +139,15 @@
           "lib/net45/System.Interactive.Async.dll": {}
         }
       },
+      "LibGit2Sharp/0.21.0.176": {
+        "type": "package",
+        "compile": {
+          "lib/net40/LibGit2Sharp.dll": {}
+        },
+        "runtime": {
+          "lib/net40/LibGit2Sharp.dll": {}
+        }
+      },
       "Microsoft.AspNet.Antiforgery/1.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -1433,7 +1442,7 @@
           "lib/net451/Microsoft.Net.Http.Headers.dll": {}
         }
       },
-      "Newtonsoft.Json/6.0.6": {
+      "Newtonsoft.Json/8.0.2": {
         "type": "package",
         "compile": {
           "lib/net45/Newtonsoft.Json.dll": {}
@@ -1798,6 +1807,15 @@
         },
         "runtime": {
           "lib/net45/System.Interactive.Async.dll": {}
+        }
+      },
+      "LibGit2Sharp/0.21.0.176": {
+        "type": "package",
+        "compile": {
+          "lib/net40/LibGit2Sharp.dll": {}
+        },
+        "runtime": {
+          "lib/net40/LibGit2Sharp.dll": {}
         }
       },
       "Microsoft.AspNet.Antiforgery/1.0.0-rc1-final": {
@@ -3097,7 +3115,7 @@
           "lib/net451/Microsoft.Net.Http.Headers.dll": {}
         }
       },
-      "Newtonsoft.Json/6.0.6": {
+      "Newtonsoft.Json/8.0.2": {
         "type": "package",
         "compile": {
           "lib/net45/Newtonsoft.Json.dll": {}
@@ -3462,6 +3480,15 @@
         },
         "runtime": {
           "lib/net45/System.Interactive.Async.dll": {}
+        }
+      },
+      "LibGit2Sharp/0.21.0.176": {
+        "type": "package",
+        "compile": {
+          "lib/net40/LibGit2Sharp.dll": {}
+        },
+        "runtime": {
+          "lib/net40/LibGit2Sharp.dll": {}
         }
       },
       "Microsoft.AspNet.Antiforgery/1.0.0-rc1-final": {
@@ -4761,7 +4788,7 @@
           "lib/net451/Microsoft.Net.Http.Headers.dll": {}
         }
       },
-      "Newtonsoft.Json/6.0.6": {
+      "Newtonsoft.Json/8.0.2": {
         "type": "package",
         "compile": {
           "lib/net45/Newtonsoft.Json.dll": {}
@@ -5101,6 +5128,26 @@
         "lib/net45/System.Interactive.Async.XML",
         "lib/portable-windows8+net45+wp8/System.Interactive.Async.dll",
         "lib/portable-windows8+net45+wp8/System.Interactive.Async.XML"
+      ]
+    },
+    "LibGit2Sharp/0.21.0.176": {
+      "type": "package",
+      "sha512": "BiHTA0u/PkC89VkjpPhJm9YGHCK5x2dmWhXxW8Dekb2nLEZUlSYsnXMjyrT+iAcIRX8AcQqrKa+o8306guvcXA==",
+      "files": [
+        "App_Readme/libgit2.license.txt",
+        "App_Readme/LibGit2Sharp.CHANGES.md",
+        "App_Readme/LibGit2Sharp.LICENSE.md",
+        "App_Readme/LibGit2Sharp.README.md",
+        "build/net40/LibGit2Sharp.props",
+        "lib/net40/LibGit2Sharp.dll",
+        "lib/net40/LibGit2Sharp.xml",
+        "lib/net40/NativeBinaries/amd64/git2-e0902fb.dll",
+        "lib/net40/NativeBinaries/amd64/git2-e0902fb.pdb",
+        "lib/net40/NativeBinaries/x86/git2-e0902fb.dll",
+        "lib/net40/NativeBinaries/x86/git2-e0902fb.pdb",
+        "LibGit2Sharp.0.21.0.176.nupkg",
+        "LibGit2Sharp.0.21.0.176.nupkg.sha512",
+        "LibGit2Sharp.nuspec"
       ]
     },
     "Microsoft.AspNet.Antiforgery/1.0.0-rc1-final": {
@@ -6114,9 +6161,9 @@
         "Microsoft.Net.Http.Headers.nuspec"
       ]
     },
-    "Newtonsoft.Json/6.0.6": {
+    "Newtonsoft.Json/8.0.2": {
       "type": "package",
-      "sha512": "w26uZNyCG5VeoKiEOJ4+9/o8koSofLKwHl7WLreIcp0U6r57L7WiRXmjp8MTKFw6dYNZ9AE0lw69WYbIhUsU9Q==",
+      "sha512": "e5yWmEfu68rmtG431zl9N/7PlNKQDIuiDW5MHlEFAZcecakcxrIGnKqrPAtWNILzK2oNanRB5cD150MYhECK3g==",
       "files": [
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
@@ -6126,14 +6173,12 @@
         "lib/net40/Newtonsoft.Json.xml",
         "lib/net45/Newtonsoft.Json.dll",
         "lib/net45/Newtonsoft.Json.xml",
-        "lib/netcore45/Newtonsoft.Json.dll",
-        "lib/netcore45/Newtonsoft.Json.xml",
         "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll",
         "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
-        "lib/portable-net45+wp80+win8+wpa81+aspnetcore50/Newtonsoft.Json.dll",
-        "lib/portable-net45+wp80+win8+wpa81+aspnetcore50/Newtonsoft.Json.xml",
-        "Newtonsoft.Json.6.0.6.nupkg",
-        "Newtonsoft.Json.6.0.6.nupkg.sha512",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.xml",
+        "Newtonsoft.Json.8.0.2.nupkg",
+        "Newtonsoft.Json.8.0.2.nupkg.sha512",
         "Newtonsoft.Json.nuspec",
         "tools/install.ps1"
       ]
@@ -6938,8 +6983,12 @@
       "Microsoft.AspNet.Mvc.TagHelpers >= 6.0.0-rc1-final",
       "EntityFramework.Core >= 7.0.0-rc1-final",
       "EntityFramework.MicrosoftSqlServer >= 7.0.0-rc1-final",
-      "EntityFramework.Commands >= 7.0.0-rc1-final"
+      "EntityFramework.Commands >= 7.0.0-rc1-final",
+      "Newtonsoft.Json >= 8.0.2",
+      "LibGit2Sharp >= 0.21.0.176"
     ],
-    "DNX,Version=v4.5.1": []
+    "DNX,Version=v4.5.1": [
+      "fx/System.Web.Extensions >= 4.0.0"
+    ]
   }
 }
