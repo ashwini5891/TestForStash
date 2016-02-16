@@ -43,6 +43,16 @@ namespace TheWorld.Controllers.Web
                 ViewBag.Message = "Mail Sent. Thanks!";
 
             }
+
+            var Quote = new Quote()
+            {
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                Email = model.Email,
+                PostCode = model.PostCode
+            };
+            _context.Quotes.Add(Quote);
+            _context.SaveChanges();
             return View();
         }
 
