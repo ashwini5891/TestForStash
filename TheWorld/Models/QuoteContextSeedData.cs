@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TheWorld.Models
+namespace FunWithGit.Models
 {
     public class QuoteContextSeedData
     {

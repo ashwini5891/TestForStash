@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.Data.Entity.Migrations;
 using Microsoft.Data.Entity.Metadata;
 
-namespace TheWorld.Migrations
+namespace FunWithGit.Migrations
 {
     public partial class InitialDatabase : Migration
     {

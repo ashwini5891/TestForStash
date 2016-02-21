@@ -1,6 +1,6 @@
 using System;
 
-namespace TheWorld.Services
+namespace FunWithGit.Services
 {
   public interface IMailService
   {

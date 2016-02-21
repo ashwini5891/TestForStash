@@ -8,10 +8,10 @@ using Microsoft.AspNet.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.PlatformAbstractions;
-using TheWorld.Services;
-using TheWorld.Models;
+using FunWithGit.Services;
+using FunWithGit.Models;
 
-namespace TheWorld
+namespace FunWithGit
 {
   public class Startup
   {

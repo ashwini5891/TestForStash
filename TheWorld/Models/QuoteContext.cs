@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Data.Entity;
 
-namespace TheWorld.Models
+namespace FunWithGit.Models
 {
     public class QuoteContext : DbContext
     {

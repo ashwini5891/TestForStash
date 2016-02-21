@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace TheWorld.ViewModels
+namespace FunWithGit.ViewModels
 {
   public class QuoteViewModel
   {

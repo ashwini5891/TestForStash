@@ -1,13 +1,13 @@
 using Microsoft.AspNet.Mvc;
-using TheWorld.ViewModels;
-using TheWorld.Models;
+using FunWithGit.ViewModels;
+using FunWithGit.Models;
 using System.Linq;
 using LibGit2Sharp;
 using System.Web.Script.Serialization;
 using System;
 using System.Diagnostics;
 
-namespace TheWorld.Controllers.Web
+namespace FunWithGit.Controllers.Web
 {
   public class AppController : Controller
   {

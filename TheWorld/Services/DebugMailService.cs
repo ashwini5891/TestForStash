@@ -1,7 +1,7 @@
 using System;
 using System.Diagnostics;
 
-namespace TheWorld.Services
+namespace FunWithGit.Services
 {
   public class DebugMailService : IMailService
   {
