@@ -17,10 +17,10 @@
   <div id="sidebar">
     <ul class="nav">
       <li class="active"><a asp-controller="App" asp-action="Index">Home</a></li>
-      <li>@*<a asp-controller="App" asp-action="About">About</a>*@</li>
-      <li>@*<a asp-controller="App" asp-action="Contact">Contact</a>*@</li>
         <li><a asp-controller="App" asp-action="GetAQuoteInSQL">Get a Quote (SQL)</a></li>
+        <li><a asp-controller="App" asp-action="RetrieveQuoteSql">Retrieve a Quote (SQL)</a></li>
         <li><a asp-controller="App" asp-action="GetAQuoteViaGit">Get a Quote (Git)</a></li>
+        <li><a asp-controller="App" asp-action="RetrieveQuoteGit">Retrieve a Quote (Git)</a></li>
     </ul>
   </div>
 
@@ -42,11 +42,11 @@
       </div>
 
     </div>
-    <div id="footer" class="container-fluid">
+    @*<div id="footer" class="container-fluid">
       <div class="navbar navbar-inverse navbar-fixed-bottom">
         <h4 class="text-center text-info">&copy; 2016 Fun with Git</h4>
       </div>
-    </div>
+    </div>*@
   </div>
 
   <script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>

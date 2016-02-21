@@ -6,6 +6,8 @@ using LibGit2Sharp;
 using System.Web.Script.Serialization;
 using System;
 using System.Diagnostics;
+using System.IO;
+using System.Text;
 
 namespace FunWithGit.Controllers.Web
 {
@@ -20,9 +22,7 @@ namespace FunWithGit.Controllers.Web
 
     public IActionResult Index()
     {
-            var quotes = _context.Quotes.OrderBy(t => t.Created).ToList();
-      return View(quotes);
-            //return View();
+      return View();
     }
 
     public IActionResult About()
@@ -30,11 +30,50 @@ namespace FunWithGit.Controllers.Web
       return View();
     }
 
-    public IActionResult GetAQuoteInSQL()
+        public IActionResult RetrieveQuoteSql()
         {
             return View();
         }
 
+        [HttpPost]
+        public IActionResult RetrieveQuoteSql(string quoteNumber)
+        {
+            var quote = _context.Quotes
+                    .Where(b => b.QuoteNumber == quoteNumber)
+                    .FirstOrDefault();
+            ViewBag.Message = quote.FirstName;
+            return View();
+        }
+
+        public IActionResult RetrieveQuoteGit()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult RetrieveQuoteGit(string quoteNumber)
+        {
+            using (var repo = new Repository("C:\\temp\\rooted\\path"))
+            {
+                var commit = repo.Lookup<Commit>(quoteNumber);
+                var treeEntry = commit["output.json"];
+
+                var blob = (Blob)treeEntry.Target;
+
+                var contentStream = blob.GetContentStream();
+
+                using (var tr = new StreamReader(contentStream, Encoding.UTF8))
+                {
+                    string content = tr.ReadToEnd();
+                }
+            }
+            return View();
+        }
+
+        public IActionResult GetAQuoteInSQL()
+        {
+            return View();
+        }
 
     [HttpPost]
     public IActionResult GetAQuoteInSQL(QuoteViewModel model)
