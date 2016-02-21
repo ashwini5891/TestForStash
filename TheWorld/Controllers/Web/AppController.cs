@@ -38,11 +38,21 @@ namespace FunWithGit.Controllers.Web
         [HttpPost]
         public IActionResult RetrieveQuoteSql(string quoteNumber)
         {
-            var quote = _context.Quotes
+            var watch = Stopwatch.StartNew();
+            Quote quote = _context.Quotes
                     .Where(b => b.QuoteNumber == quoteNumber)
                     .FirstOrDefault();
-            ViewBag.Message = quote.FirstName;
-            return View();
+
+            QuoteViewModel viewModel = new QuoteViewModel()
+            {
+                FirstName = quote.FirstName,
+                LastName = quote.LastName,
+                Email = quote.Email
+            };
+            watch.Stop();
+            var elapsedMs = watch.ElapsedMilliseconds;
+            ViewBag.Message = "Time taken: " + elapsedMs + " ms";
+            return View("DisplayQuoteSql", viewModel);
         }
 
         public IActionResult RetrieveQuoteGit()
@@ -53,6 +63,7 @@ namespace FunWithGit.Controllers.Web
         [HttpPost]
         public IActionResult RetrieveQuoteGit(string quoteNumber)
         {
+            var watch = Stopwatch.StartNew();
             using (var repo = new Repository("C:\\temp\\rooted\\path"))
             {
                 var commit = repo.Lookup<Commit>(quoteNumber);
@@ -65,8 +76,24 @@ namespace FunWithGit.Controllers.Web
                 using (var tr = new StreamReader(contentStream, Encoding.UTF8))
                 {
                     string content = tr.ReadToEnd();
+                    Quote jsondata = new JavaScriptSerializer().Deserialize<Quote>(content);
+                    QuoteViewModel viewModel = new QuoteViewModel()
+                    {
+                        FirstName = jsondata.FirstName,
+                        LastName = jsondata.LastName,
+                        Email = jsondata.Email
+                    };
+
+                    watch.Stop();
+                    var elapsedMs = watch.ElapsedMilliseconds;
+                    ViewBag.Message = "Time taken: " + elapsedMs + " ms";
+                    return View("DisplayQuoteSql", viewModel);
                 }
             }
+        }
+
+        public IActionResult DisplayQuoteSql(QuoteViewModel model)
+        {
             return View();
         }
 
@@ -79,7 +106,6 @@ namespace FunWithGit.Controllers.Web
     public IActionResult GetAQuoteInSQL(QuoteViewModel model)
         {
             var watch = Stopwatch.StartNew();
-            // the code that you want to measure comes here
 
             var Quote = new Quote()
             {
@@ -102,9 +128,7 @@ namespace FunWithGit.Controllers.Web
 
             if (ModelState.IsValid)
             {
-
-                ViewBag.Message = "Thanks! Your Quote is saved. Your quote number is: " + quoteNumber + "\\n" + "Time taken: " + elapsedMs + "ms";
-
+                ViewBag.Message = "Quote number is: " + quoteNumber + " Time taken: " + elapsedMs + "ms";
             }
             return View();
         }
@@ -131,7 +155,6 @@ namespace FunWithGit.Controllers.Web
             string rootedPath = Repository.Init("C:\\temp\\rooted\\path");
             string jsondata = new JavaScriptSerializer().Serialize(model);
               
-            //System.IO.File.WriteAllText(@"c:\\temp\\rooted\\" + "output.json", jsondata);
 
             using (var repo = new Repository("C:\\temp\\rooted\\path"))
             {
@@ -153,20 +176,14 @@ namespace FunWithGit.Controllers.Web
 
                     if (ModelState.IsValid)
                     {
-
-                        ViewBag.Message = "Thanks! Your Quote is saved. Your quote number is: " + commit.Id + "\\n" + "Time taken: " + elapsedMs + "ms";
-
+                        ViewBag.Message = "Quote number is: " + commit.Id + " Time taken: " + elapsedMs + "ms";
                     }
-
                 }
                 catch(Exception ex)
                 {
                     ViewBag.Message = "Nothing to commit";
                 }
-                    
-
             }
-
             return View();
         }
     }
